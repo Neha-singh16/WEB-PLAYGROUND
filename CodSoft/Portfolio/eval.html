@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Expression Evaluator</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script>
+</head>
+<body>
+    <h1>Math Expression Evaluator</h1>
+    <input type="text" id="expression" placeholder="Enter a mathematical expression">
+    <button onclick="evaluateExpression()">Evaluate</button>
+    <div id="result"></div>
+
+    <script>
+        function evaluateExpression() {
+            let userInput = document.getElementById('expression').value;
+            try {
+                let result = math.evaluate(userInput);
+                document.getElementById('result').innerText = result;
+            } catch (error) {
+                document.getElementById('result').innerText = "Error: Invalid expression";
+            }
+        }
+    </script>
+</body>
+</html>
+
